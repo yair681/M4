@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 מאסטר קוד - מערכת ניהול עסק</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎯</text></svg>">
+    <link rel="stylesheet" href="style.css">
+    <!-- Monaco Editor - VS Code Editor -->
+    <link rel="stylesheet" data-name="vs/editor/editor.main" href="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.44.0/min/vs/editor/editor.main.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <h1>🎯 מאסטר קוד</h1>
+            <p>מערכת ניהול עסק</p>
+        </div>
+        
+        <nav class="menu">
+            <button class="menu-btn active" data-page="dashboard">
+                <span class="icon">📊</span>
+                <span>לוח בקרה</span>
+            </button>
+            <button class="menu-btn" data-page="clients">
+                <span class="icon">👥</span>
+                <span>לקוחות</span>
+            </button>
+            <button class="menu-btn" data-page="projects">
+                <span class="icon">📁</span>
+                <span>פרויקטים</span>
+            </button>
+            <button class="menu-btn" data-page="finance">
+                <span class="icon">💰</span>
+                <span>כספים</span>
+            </button>
+            <button class="menu-btn" data-page="tasks">
+                <span class="icon">✅</span>
+                <span>משימות</span>
+            </button>
+            <button class="menu-btn" data-page="leads">
+                <span class="icon">🎯</span>
+                <span>לידים</span>
+            </button>
+            <button class="menu-btn" data-page="quotes">
+                <span class="icon">💼</span>
+                <span>הצעות מחיר</span>
+            </button>
+            <button class="menu-btn" data-page="settings">
+                <span class="icon">⚙️</span>
+                <span>הגדרות</span>
+            </button>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Dashboard Page -->
+        <div id="dashboard-page" class="page active">
+            <div class="page-header">
+                <h2>📊 לוח בקרה</h2>
+                <div class="current-time" id="currentTime"></div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-label">👥 סך הכל לקוחות</div>
+                    <div class="stat-value" id="stat-clients">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">📁 פרויקטים פעילים</div>
+                    <div class="stat-value" id="stat-projects">0</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label">🎯 לידים פעילים</div>
+                    <div class="stat-value" id="stat-leads">0</div>
+                </div>
+                <div class="stat-card success">
+                    <div class="stat-label">💰 סך הכנסות</div>
+                    <div class="stat-value" id="stat-income">₪0</div>
+                </div>
+                <div class="stat-card danger">
+                    <div class="stat-label">📉 סך הוצאות</div>
+                    <div class="stat-value" id="stat-expenses">₪0</div>
+                </div>
+                <div class="stat-card success">
+                    <div class="stat-label">💵 רווח נקי</div>
+                    <div class="stat-value" id="stat-profit">₪0</div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h3>📋 פרויקטים אחרונים</h3>
+                <div id="recent-projects"></div>
+            </div>
+        </div>
+
+        <!-- Clients Page -->
+        <div id="clients-page" class="page">
+            <div class="page-header">
+                <h2>👥 ניהול לקוחות</h2>
+                <button class="btn btn-success" onclick="showAddClientModal()">+ הוסף לקוח</button>
+            </div>
+            
+            <div class="card">
+                <h3>📋 כל הלקוחות <span id="clients-count">(0)</span></h3>
+                <div id="clients-list"></div>
+            </div>
+        </div>
+
+        <!-- Projects Page -->
+        <div id="projects-page" class="page">
+            <div class="page-header">
+                <h2>📁 ניהול פרויקטים</h2>
+                <button class="btn btn-success" onclick="showAddProjectModal()">+ הוסף פרויקט</button>
+            </div>
+            
+            <div class="card">
+                <h3>📊 כל הפרויקטים</h3>
+                <div id="projects-list"></div>
+            </div>
+        </div>
+
+        <!-- Finance Page -->
+        <div id="finance-page" class="page">
+            <div class="page-header">
+                <h2>💰 ניהול פיננסי</h2>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card success">
+                    <div class="stat-label">📈 סך הכנסות</div>
+                    <div class="stat-value" id="finance-income">₪0</div>
+                </div>
+                <div class="stat-card danger">
+                    <div class="stat-label">📉 סך הוצאות</div>
+                    <div class="stat-value" id="finance-expenses">₪0</div>
+                </div>
+                <div class="stat-card success">
+                    <div class="stat-label">💵 רווח נקי</div>
+                    <div class="stat-value" id="finance-profit">₪0</div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-success" onclick="showAddIncomeModal()">+ הוסף הכנסה</button>
+                <button class="btn btn-danger" onclick="showAddExpenseModal()">+ הוסף הוצאה</button>
+            </div>
+
+            <div class="finance-grid">
+                <div class="card">
+                    <h3>📈 הכנסות אחרונות</h3>
+                    <div id="income-list"></div>
+                </div>
+                <div class="card">
+                    <h3>📉 הוצאות אחרונות</h3>
+                    <div id="expenses-list"></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tasks Page -->
+        <div id="tasks-page" class="page">
+            <div class="page-header">
+                <h2>✅ ניהול משימות</h2>
+                <button class="btn btn-success" onclick="showAddTaskModal()">+ הוסף משימה</button>
+            </div>
+            
+            <div class="card">
+                <h3>📝 משימות פעילות</h3>
+                <div id="tasks-list"></div>
+            </div>
+        </div>
+
+        <!-- Leads Page -->
+        <div id="leads-page" class="page">
+            <div class="page-header">
+                <h2>🎯 ניהול לידים</h2>
+                <button class="btn btn-success" onclick="showAddLeadModal()">+ הוסף ליד</button>
+            </div>
+            
+            <div class="card">
+                <h3>🔥 לידים פעילים</h3>
+                <div id="leads-list"></div>
+            </div>
+        </div>
+
+        <!-- Quotes Page -->
+        <div id="quotes-page" class="page">
+            <div class="page-header">
+                <h2>💼 ניהול הצעות מחיר</h2>
+                <button class="btn btn-success" onclick="showAddQuoteModal()">+ צור הצעת מחיר</button>
+            </div>
+            
+            <div class="card">
+                <h3>📋 הצעות מחיר אחרונות</h3>
+                <div id="quotes-list"></div>
+            </div>
+        </div>
+
+        <!-- Settings Page -->
+        <div id="settings-page" class="page">
+            <div class="page-header">
+                <h2>⚙️ הגדרות</h2>
+            </div>
+            
+            <div class="card">
+                <h3>🏢 פרטי העסק</h3>
+                <div id="settings-info"></div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-success" onclick="backupData()">💾 צור גיבוי</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modals -->
+    <div id="modal-overlay" class="modal-overlay" onclick="closeModal()"></div>
+    
+    <!-- Add Client Modal -->
+    <div id="add-client-modal" class="modal">
+        <div class="modal-header">
+            <h3>➕ הוסף לקוח חדש</h3>
+            <button class="close-btn" onclick="closeModal()">×</button>
+        </div>
+        <form onsubmit="addClient(event)">
+            <div class="form-group">
+                <label>שם מלא *</label>
+                <input type="text" name="name" required placeholder="למשל: משה כהן">
+            </div>
+            <div class="form-group">
+                <label>טלפון *</label>
+                <input type="tel" name="phone" required placeholder="050-1234567">
+            </div>
+            <div class="form-group">
+                <label>אימייל</label>
+                <input type="email" name="email" placeholder="moshe@example.com">
+            </div>
+            <div class="form-group">
+                <label>מקור</label>
+                <input type="text" name="source" placeholder="איך הגיע אליך? (פייסבוק, המלצה...)">
+            </div>
+            <button type="submit" class="btn btn-success">💾 שמור לקוח</button>
+        </form>
+    </div>
+
+    <!-- Add Project Modal -->
+    <div id="add-project-modal" class="modal">
+        <div class="modal-header">
+            <h3>➕ הוסף פרויקט חדש</h3>
+            <button class="close-btn" onclick="closeModal()">×</button>
+        </div>
+        <form onsubmit="addProject(event)">
+            <div class="form-group">
+                <label>לקוח *</label>
+                <select name="client_id" id="project-client-select" required>
+                    <option value="">בחר לקוח...</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>סוג פרויקט *</label>
+                <input type="text" name="type" required placeholder="למשל: דף נחיתה, אתר תדמית">
+            </div>
+            <div class="form-group">
+                <label>מחיר (₪) *</label>
+                <input type="number" name="price" required min="0" step="0.01" placeholder="1500">
+            </div>
+            <div class="form-group">
+                <label>תיאור</label>
+                <textarea name="description" rows="3" placeholder="פרטים נוספים על הפרויקט..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>תאריך יעד</label>
+                <input type="date" name="deadline">
+            </div>
+            <button type="submit" class="btn btn-success">💾 שמור פרויקט</button>
+        </form>
+    </div>
+
+    <!-- Add Income Modal -->
+    <div id="add-income-modal" class="modal">
+        <div class="modal-header">
+            <h3>➕ הוסף הכנסה</h3>
+            <button class="close-btn" onclick="closeModal()">×</button>
+        </div>
+        <form onsubmit="addIncome(event)">
+            <div class="form-group">
+                <label>סכום (₪) *</label>
+                <input type="number" name="amount" required min="0" step="0.01" placeholder="1500">
+            </div>
+            <div class="form-group">
+                <label>מקור *</label>
+                <input type="text" name="source" required placeholder="למשל: פרויקט דף נחיתה - משה כהן">
+            </div>
+            <div class="form-group">
+                <label>קטגוריה</label>
+                <input type="text" name="category" placeholder="למשל: פרויקט, ייעוץ, אחזקה">
+            </div>
+            <button type="submit" class="btn btn-success">💾 שמור הכנסה</button>
+        </form>
+    </div>
+
+    <!-- Add Expense Modal -->
+    <div id="add-expense-modal" class="modal">
+        <div class="modal-header">
+            <h3>➕ הוסף הוצאה</h3>
+            <button class="close-btn" onclick="closeModal()">×</button>
+        </div>
+        <form onsubmit="addExpense(event)">
+            <div class="form-group">
+                <label>סכום (₪) *</label>
+                <input type="number" name="amount" required min="0" step="0.01" placeholder="500">
+            </div>
+            <div class="form-group">
+                <label>תיאור *</label>
+                <input type="text" name="description" required placeholder="למשל: שרת אחסון, רישיון תוכנה">
+            </div>
+            <div class="form-group">
+                <label>קטגוריה</label>
+                <input type="text" name="category" placeholder="למשל: שרתים, כלים, שיווק">
+            </div>
+            <button type="submit" class="btn btn-danger">💾 שמור הוצאה</button>
+        </form>
+    </div>
+
+    <!-- Add Task Modal -->
+    <div id="add-task-modal" class="modal">
+        <div class="modal-header">
+            <h3>➕ הוסף משימה חדשה</h3>
+            <button class="close-btn" onclick="closeModal()">×</button>
+        </div>
+        <form onsubmit="addTask(event)">
+            <div class="form-group">
+                <label>כותרת *</label>
+                <input type="text" name="title" required placeholder="למשל: לעדכן את אתר הלקוח">
+            </div>
+            <div class="form-group">
+                <label>תיאור</label>
+                <textarea name="description" rows="3" placeholder="פרטים נוספים..."></textarea>
+            </div>
+            <div class="form-group">
+                <label>עדיפות</label>
+                <select name="priority">
+                    <option value="רגילה">רגילה</option>
+                    <option value="בינונית">בינונית</option>
+                    <option value="גבוהה">גבוהה</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>תאריך יעד</label>
+                <input type="date" name="due_date">
+            </div>
+            <button type="submit" class="btn btn-success">💾 שמור משימה</button>
+        </form>
+    </div>
+
+    <!-- Add Quote Modal -->
+    <div id="add-quote-modal" class="modal large-modal">
+        <div class="modal-header">
+            <h3>➕ צור הצעת מחיר חדשה</h3>
+            <button class="close-btn" onclick="closeModal()">×</button>
+        </div>
+        <form onsubmit="createQuote(event)">
+            <div class="form-section">
+                <h4>👤 פרטי לקוח</h4>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>שם לקוח *</label>
+                        <input type="text" name="client_name" required placeholder="משה כהן">
+                    </div>
+                    <div class="form-group">
+                        <label>טלפון *</label>
+                        <input type="tel" name="client_phone" required placeholder="050-1234567">
+                    </div>
+                    <div class="form-group">
+                        <label>אימייל *</label>
+                        <input type="email" name="client_email" required placeholder="moshe@example.com">
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-section">
+                <h4>📋 שירותים</h4>
+                <div id="quote-items">
+                    <div class="quote-item">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>שם השירות *</label>
+                                <input type="text" name="item_name[]" required placeholder="דף נחיתה מקצועי">
+                            </div>
+                            <div class="form-group">
+                                <label>כמות *</label>
+                                <input type="number" name="item_qty[]" value="1" min="1" required>
+                            </div>
+                            <div class="form-group">
+                                <label>מחיר (₪) *</label>
+                                <input type="number" name="item_price[]" step="0.01" min="0" required placeholder="1500">
+                            </div>
+                            <div class="form-group">
+                                <label>הנחה (₪)</label>
+                                <input type="number" name="item_discount[]" value="0" step="0.01" min="0" placeholder="0">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>תיאור</label>
+                            <textarea name="item_desc[]" rows="2" placeholder="פירוט השירות..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-secondary" onclick="addQuoteItem()">+ הוסף שירות נוסף</button>
+            </div>
+
+            <div class="form-section">
+                <h4>📝 מידע נוסף</h4>
+                <div class="form-group">
+                    <label>הערות</label>
+                    <textarea name="notes" rows="4" placeholder="תנאי תשלום, זמני אספקה, הערות חשובות..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label>תוקף (ימים)</label>
+                    <input type="number" name="validity_days" value="30" min="1">
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-success btn-large">💼 צור הצעת מחיר</button>
+        </form>
+    </div>
+
+    <!-- Add Lead Modal -->
+    <div id="add-lead-modal" class="modal">
+        <div class="modal-header">
+            <h3>➕ הוסף ליד חדש</h3>
+            <button class="close-btn" onclick="closeModal()">×</button>
+        </div>
+        <form onsubmit="addLead(event)">
+            <div class="form-group">
+                <label>שם מלא *</label>
+                <input type="text" name="name" required placeholder="דני לוי">
+            </div>
+            <div class="form-group">
+                <label>טלפון *</label>
+                <input type="tel" name="phone" required placeholder="052-9876543">
+            </div>
+            <div class="form-group">
+                <label>אימייל</label>
+                <input type="email" name="email" placeholder="danny@example.com">
+            </div>
+            <div class="form-group">
+                <label>מקור</label>
+                <input type="text" name="source" placeholder="פייסבוק, גוגל, המלצה...">
+            </div>
+            <div class="form-group">
+                <label>עניין</label>
+                <input type="text" name="interest" placeholder="מה מעניין אותו?">
+            </div>
+            <div class="form-group">
+                <label>הערות</label>
+                <textarea name="notes" rows="3" placeholder="מידע נוסף על הליד..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-success">💾 שמור ליד</button>
+        </form>
+    </div>
+
+    <!-- AI Chat Floating Button -->
+    <button class="ai-chat-btn" onclick="toggleAIChat()" title="עוזר AI">
+        <span class="ai-icon">🤖</span>
+    </button>
+
+    <!-- AI Chat Window -->
+    <div id="ai-chat-window" class="ai-chat-window">
+        <div class="ai-chat-header">
+            <h3>🤖 עוזר AI חכם</h3>
+            <button class="close-btn" onclick="toggleAIChat()">×</button>
+        </div>
+        <div class="ai-chat-messages" id="ai-chat-messages">
+            <div class="ai-message">
+                <div class="ai-avatar">🤖</div>
+                <div class="ai-text">
+                    <strong>שלום! אני העוזר החכם שלך 👋</strong><br><br>
+                    אני יכול לעזור לך עם:<br><br>
+                    
+                    📊 <strong>סטטיסטיקות:</strong><br>
+                    • "כמה לקוחות יש לי?"<br>
+                    • "כמה פרויקטים פעילים יש?"<br>
+                    • "מה ההכנסות שלי?"<br>
+                    • "מה הרווח הנקי?"<br><br>
+                    
+                    💰 <strong>כספים:</strong><br>
+                    • "תראה לי סיכום כספי"<br>
+                    • "כמה פרויקטים ממתינים לתשלום?"<br><br>
+                    
+                    ✅ <strong>משימות:</strong><br>
+                    • "כמה משימות פתוחות יש לי?"<br>
+                    • "מה סטטוס המשימות?"<br><br>
+                    
+                    💡 <strong>המלצות:</strong><br>
+                    • "תן לי המלצות לשיפור"<br>
+                    • "מה אני צריך לטפל בו?"<br><br>
+                    
+                    פשוט שאל אותי משהו! 😊
+                </div>
+            </div>
+        </div>
+        <form class="ai-chat-input" onsubmit="sendAIMessage(event)">
+            <input type="text" id="ai-input" placeholder="שאל משהו... למשל: כמה לקוחות יש לי?" required>
+            <button type="submit" class="btn btn-success">שלח</button>
+        </form>
+    </div>
+
+    <!-- Monaco Editor Script -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.44.0/min/vs/loader.min.js"></script>
+    
+    <!-- Code Editor Modal -->
+    <div id="code-editor-modal" class="modal code-editor-modal" style="display: none;">
+        <div class="code-editor-container">
+            <div class="code-editor-header">
+                <div class="editor-title">
+                    <h3>📝 <span id="editor-file-name">עורך קוד</span></h3>
+                    <span class="editor-file-type" id="editor-file-type"></span>
+                </div>
+                <div class="editor-actions">
+                    <button class="btn btn-success" onclick="saveCodeFile()">💾 שמור</button>
+                    <button class="btn btn-primary" onclick="runCode()" id="run-code-btn">▶️ הרץ</button>
+                    <button class="close-btn" onclick="closeCodeEditor()">×</button>
+                </div>
+            </div>
+            <div class="code-editor-body">
+                <div id="monaco-editor" style="height: calc(100vh - 200px); width: 100%;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Code Runner Modal -->
+    <div id="code-runner-modal" class="modal code-runner-modal" style="display: none;">
+        <div class="code-runner-container">
+            <div class="code-runner-header">
+                <h3>▶️ הרצת קוד - <span id="runner-file-name"></span></h3>
+                <button class="close-btn" onclick="closeCodeRunner()">×</button>
+            </div>
+            <div class="code-runner-body">
+                <iframe id="code-runner-iframe" style="width: 100%; height: calc(100vh - 150px); border: none; background: white;"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <script src="code-editor.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

@@ -1,0 +1,205 @@
+{
+  "clients": [
+    {
+      "id": 1,
+      "name": "אביהו מזרחי",
+      "phone": "⁦+972 50-555-7764⁩",
+      "email": "Avihumizrachi2@gmail.com",
+      "source": "פיסבוק",
+      "date_added": "2025-12-11 12:16:46",
+      "total_paid": 1900,
+      "projects_count": 2,
+      "notes": ""
+    }
+  ],
+  "projects": [
+    {
+      "id": 2,
+      "client_id": 1,
+      "client_name": "אביהו מזרחי",
+      "type": "לוגו ומקדמה לדף נחיתה מאביהו",
+      "price": 300,
+      "description": "",
+      "deadline": "",
+      "status": "בתהליך",
+      "date_created": "2025-12-11 18:18:03",
+      "date_completed": "",
+      "paid": true,
+      "payment_date": "2025-12-11 18:18:07",
+      "files": []
+    },
+    {
+      "id": 3,
+      "client_id": 1,
+      "client_name": "אביהו מזרחי",
+      "type": "דף נחיתה מקצועי פרמיום",
+      "price": 1600,
+      "description": "שולם מקדמה של 200",
+      "deadline": "2025-12-14",
+      "status": "בתהליך",
+      "date_created": "2025-12-12 10:35:36",
+      "date_completed": "",
+      "paid": true,
+      "payment_date": "2025-12-15 11:06:44",
+      "files": []
+    }
+  ],
+  "income": [
+    {
+      "id": 1,
+      "amount": 300,
+      "source": "פרויקט #2 - אביהו מזרחי",
+      "category": "פרויקט",
+      "date": "2025-12-11 18:18:07"
+    },
+    {
+      "id": 2,
+      "amount": 1600,
+      "source": "פרויקט #3 - אביהו מזרחי",
+      "category": "פרויקט",
+      "date": "2025-12-15 11:06:44"
+    }
+  ],
+  "expenses": [],
+  "tasks": [
+    {
+      "id": 1,
+      "title": "לשנות את הטקסט איפה שכתוב 24/7 תשני לבימים א עד ה ",
+      "description": "",
+      "priority": "רגילה",
+      "due_date": "2025-12-12",
+      "status": "הושלם",
+      "date_created": "2025-12-11 17:44:10",
+      "date_completed": "2025-12-12 10:34:07"
+    },
+    {
+      "id": 2,
+      "title": "להכניס לאתר שזה עסק משפחתי",
+      "description": "",
+      "priority": "רגילה",
+      "due_date": "",
+      "status": "הושלם",
+      "date_created": "2025-12-11 17:44:36",
+      "date_completed": "2025-12-12 10:34:10"
+    },
+    {
+      "id": 3,
+      "title": "תוריד את השחזור מידע והעברת נתונים גם תמחק את נזקי מים ",
+      "description": "",
+      "priority": "רגילה",
+      "due_date": "",
+      "status": "הושלם",
+      "date_created": "2025-12-11 17:47:13",
+      "date_completed": "2025-12-12 10:34:12"
+    },
+    {
+      "id": 4,
+      "title": "באזור של למה לבחור בנו לשנות לgo cellular fix",
+      "description": "",
+      "priority": "רגילה",
+      "due_date": "",
+      "status": "הושלם",
+      "date_created": "2025-12-11 17:47:54",
+      "date_completed": "2025-12-12 10:34:15"
+    },
+    {
+      "id": 5,
+      "title": "יש באתר את המגזר העסקי תוסיף את המגזר הפרטי ",
+      "description": "",
+      "priority": "רגילה",
+      "due_date": "",
+      "status": "הושלם",
+      "date_created": "2025-12-11 17:50:20",
+      "date_completed": "2025-12-12 10:34:18"
+    },
+    {
+      "id": 6,
+      "title": "תשנה את המספר ל0524445586",
+      "description": "",
+      "priority": "רגילה",
+      "due_date": "",
+      "status": "הושלם",
+      "date_created": "2025-12-11 17:50:49",
+      "date_completed": "2025-12-12 10:34:21"
+    },
+    {
+      "id": 7,
+      "title": "לשנות את הכותרת לפתרונות תיקון עד אליך ",
+      "description": "",
+      "priority": "רגילה",
+      "due_date": "",
+      "status": "הושלם",
+      "date_created": "2025-12-11 17:53:25",
+      "date_completed": "2025-12-12 10:34:23"
+    }
+  ],
+  "leads": [
+    {
+      "id": 1,
+      "name": "נתנאל דודמן",
+      "phone": "0506787252",
+      "email": "",
+      "source": "וואצאפ ",
+      "interest": "דף נחיתה לעסק של רמקולים וציוד הגברה ואורות ",
+      "notes": "",
+      "status": "חדש",
+      "date_added": "2025-12-15 11:08:56",
+      "follow_up_date": ""
+    }
+  ],
+  "quotes": [
+    {
+      "id": 1,
+      "quote_number": "QT-2025-12-11_18-16-25",
+      "client_name": "אביהו מזרחי",
+      "client_email": "przyyryair@gmail.com",
+      "client_phone": "05052209184",
+      "items": [
+        {
+          "name": "חבילת פרימיום",
+          "description": "האתר לא כולל נגישות ",
+          "quantity": 1,
+          "price": 1800,
+          "discount": 0
+        }
+      ],
+      "notes": "",
+      "validity_days": 30,
+      "date_created": "2025-12-11 18:16:25",
+      "subtotal": 1800,
+      "discount": 0,
+      "total": 1800,
+      "html_content": "<!DOCTYPE html>\n<html dir=\"rtl\" lang=\"he\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>הצעת מחיר - QT-2025-12-11_18-16-25</title>\n    <style>\n        * { margin: 0; padding: 0; box-sizing: border-box; }\n        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; line-height: 1.6; }\n        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 15px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; }\n        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; text-align: center; }\n        .header h1 { font-size: 2.5em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }\n        .header .subtitle { font-size: 1.2em; opacity: 0.9; }\n        .info-section { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding: 40px; background: #f8f9fa; }\n        .info-box { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }\n        .info-box h3 { color: #667eea; margin-bottom: 15px; font-size: 1.3em; border-bottom: 2px solid #667eea; padding-bottom: 10px; }\n        .info-box p { margin: 8px 0; color: #2c3e50; }\n        .info-box strong { color: #34495e; display: inline-block; width: 100px; }\n        .quote-details { background: #fff3cd; padding: 20px 40px; display: flex; justify-content: space-between; border-top: 3px solid #ffc107; border-bottom: 3px solid #ffc107; }\n        .quote-details div { text-align: center; }\n        .quote-details strong { display: block; color: #856404; margin-bottom: 5px; }\n        .quote-details span { font-size: 1.2em; color: #212529; font-weight: bold; }\n        .items-table { padding: 40px; }\n        .items-table h2 { color: #2c3e50; margin-bottom: 20px; font-size: 1.8em; }\n        table { width: 100%; border-collapse: collapse; margin-top: 20px; }\n        thead { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }\n        thead th { padding: 15px; text-align: center; font-size: 1.1em; }\n        tbody tr:hover { background: #f8f9fa; }\n        .totals { margin-top: 30px; background: #f8f9fa; padding: 25px; border-radius: 10px; }\n        .totals-row { display: flex; justify-content: space-between; padding: 10px 0; font-size: 1.1em; }\n        .totals-row.subtotal { color: #7f8c8d; }\n        .totals-row.discount { color: #e74c3c; }\n        .totals-row.total { border-top: 2px solid #667eea; margin-top: 10px; padding-top: 15px; font-size: 1.5em; font-weight: bold; color: #667eea; }\n        .notes { padding: 40px; background: #fff9e6; border-top: 3px solid #ffc107; }\n        .notes h3 { color: #856404; margin-bottom: 15px; }\n        .notes p { color: #212529; line-height: 1.8; white-space: pre-line; }\n        .footer { background: #2c3e50; color: white; padding: 30px; text-align: center; }\n        .footer p { margin: 5px 0; }\n        .footer a { color: #3498db; text-decoration: none; }\n        .cta-button { display: inline-block; margin-top: 20px; padding: 15px 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1em; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.3s; }\n        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }\n        @media print { body { background: white; padding: 0; } .container { box-shadow: none; } .cta-button { display: none; } }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <div class=\"header\">\n            <h1>💼 מאסטר קוד</h1>\n            <p class=\"subtitle\">הצעת מחיר מקצועית</p>\n        </div>\n        <div class=\"quote-details\">\n            <div><strong>מספר הצעה:</strong><span>QT-2025-12-11_18-16-25</span></div>\n            <div><strong>תאריך הנפקה:</strong><span>11.12.2025</span></div>\n            <div><strong>תקף עד:</strong><span>10.1.2026</span></div>\n        </div>\n        <div class=\"info-section\">\n            <div class=\"info-box\">\n                <h3>📤 ספק השירות</h3>\n                <p><strong>שם:</strong> מאסטר קוד</p>\n                <p><strong>טלפון:</strong> 052-209-1733</p>\n                <p><strong>אימייל:</strong> przyyryair@gmail.com</p>\n                <p><strong>אתר:</strong> <a href=\"https://yairmaster.info\" target=\"_blank\">https://yairmaster.info</a></p>\n            </div>\n            <div class=\"info-box\">\n                <h3>📥 לקוח</h3>\n                <p><strong>שם:</strong> אביהו מזרחי</p>\n                <p><strong>טלפון:</strong> 05052209184</p>\n                <p><strong>אימייל:</strong> przyyryair@gmail.com</p>\n            </div>\n        </div>\n        <div class=\"items-table\">\n            <h2>📋 פירוט השירותים</h2>\n            <table><thead><tr><th>#</th><th>שירות</th><th>כמות</th><th>מחיר ליחידה</th><th>סה\"כ</th></tr></thead><tbody>\n            <tr>\n                <td style=\"padding: 15px; text-align: center; border-bottom: 1px solid #ecf0f1;\">1</td>\n                <td style=\"padding: 15px; border-bottom: 1px solid #ecf0f1;\">\n                    <strong>חבילת פרימיום</strong>\n                    <br><small style=\"color: #7f8c8d;\">האתר לא כולל נגישות </small>\n                    \n                </td>\n                <td style=\"padding: 15px; text-align: center; border-bottom: 1px solid #ecf0f1;\">1</td>\n                <td style=\"padding: 15px; text-align: center; border-bottom: 1px solid #ecf0f1;\">₪1800.00</td>\n                <td style=\"padding: 15px; text-align: center; border-bottom: 1px solid #ecf0f1; font-weight: bold;\">₪1800.00</td>\n            </tr>\n        </tbody></table>\n            <div class=\"totals\">\n                <div class=\"totals-row subtotal\"><span>סכום ביניים:</span><span>₪1800.00</span></div>\n                \n                <div class=\"totals-row total\"><span>סה\"כ לתשלום:</span><span>₪1800.00</span></div>\n            </div>\n        </div>\n        \n        <div class=\"footer\">\n            <p><strong>מאסטר קוד</strong></p>\n            <p>📞 052-209-1733 | 📧 przyyryair@gmail.com</p>\n            <p>🌐 <a href=\"https://yairmaster.info\">https://yairmaster.info</a></p>\n            <a href=\"https://wa.me/9720522091733?text=היי%20%D7%9E%D7%90%D7%A1%D7%98%D7%A8%20%D7%A7%D7%95%D7%93,%20אני%20מעוניין%20לאשר%20את%20הצעת%20המחיר%20QT-2025-12-11_18-16-25\" class=\"cta-button\" target=\"_blank\">💬 אשר הצעת מחיר בוואטסאפ</a>\n        </div>\n    </div>\n</body>\n</html>"
+    },
+    {
+      "id": 2,
+      "quote_number": "QT-2025-12-15_11-10-19",
+      "client_name": "נתנאל דודמן",
+      "client_email": "r@gmail.com",
+      "client_phone": "0506787252",
+      "items": [
+        {
+          "name": "דף נחיתה פרימיום ",
+          "description": "",
+          "quantity": 1,
+          "price": 1800,
+          "discount": 0
+        }
+      ],
+      "notes": "",
+      "validity_days": 4,
+      "date_created": "2025-12-15 11:10:19",
+      "subtotal": 1800,
+      "discount": 0,
+      "total": 1800,
+      "html_content": "<!DOCTYPE html>\n<html dir=\"rtl\" lang=\"he\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>הצעת מחיר - QT-2025-12-15_11-10-19</title>\n    <style>\n        * { margin: 0; padding: 0; box-sizing: border-box; }\n        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); padding: 20px; line-height: 1.6; }\n        .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 15px; box-shadow: 0 20px 60px rgba(0,0,0,0.3); overflow: hidden; }\n        .header { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 40px; text-align: center; }\n        .header h1 { font-size: 2.5em; margin-bottom: 10px; text-shadow: 2px 2px 4px rgba(0,0,0,0.2); }\n        .header .subtitle { font-size: 1.2em; opacity: 0.9; }\n        .info-section { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; padding: 40px; background: #f8f9fa; }\n        .info-box { background: white; padding: 25px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }\n        .info-box h3 { color: #667eea; margin-bottom: 15px; font-size: 1.3em; border-bottom: 2px solid #667eea; padding-bottom: 10px; }\n        .info-box p { margin: 8px 0; color: #2c3e50; }\n        .info-box strong { color: #34495e; display: inline-block; width: 100px; }\n        .quote-details { background: #fff3cd; padding: 20px 40px; display: flex; justify-content: space-between; border-top: 3px solid #ffc107; border-bottom: 3px solid #ffc107; }\n        .quote-details div { text-align: center; }\n        .quote-details strong { display: block; color: #856404; margin-bottom: 5px; }\n        .quote-details span { font-size: 1.2em; color: #212529; font-weight: bold; }\n        .items-table { padding: 40px; }\n        .items-table h2 { color: #2c3e50; margin-bottom: 20px; font-size: 1.8em; }\n        table { width: 100%; border-collapse: collapse; margin-top: 20px; }\n        thead { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; }\n        thead th { padding: 15px; text-align: center; font-size: 1.1em; }\n        tbody tr:hover { background: #f8f9fa; }\n        .totals { margin-top: 30px; background: #f8f9fa; padding: 25px; border-radius: 10px; }\n        .totals-row { display: flex; justify-content: space-between; padding: 10px 0; font-size: 1.1em; }\n        .totals-row.subtotal { color: #7f8c8d; }\n        .totals-row.discount { color: #e74c3c; }\n        .totals-row.total { border-top: 2px solid #667eea; margin-top: 10px; padding-top: 15px; font-size: 1.5em; font-weight: bold; color: #667eea; }\n        .notes { padding: 40px; background: #fff9e6; border-top: 3px solid #ffc107; }\n        .notes h3 { color: #856404; margin-bottom: 15px; }\n        .notes p { color: #212529; line-height: 1.8; white-space: pre-line; }\n        .footer { background: #2c3e50; color: white; padding: 30px; text-align: center; }\n        .footer p { margin: 5px 0; }\n        .footer a { color: #3498db; text-decoration: none; }\n        .cta-button { display: inline-block; margin-top: 20px; padding: 15px 40px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1em; box-shadow: 0 4px 15px rgba(0,0,0,0.2); transition: transform 0.3s; }\n        .cta-button:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }\n        @media print { body { background: white; padding: 0; } .container { box-shadow: none; } .cta-button { display: none; } }\n    </style>\n</head>\n<body>\n    <div class=\"container\">\n        <div class=\"header\">\n            <h1>💼 מאסטר קוד</h1>\n            <p class=\"subtitle\">הצעת מחיר מקצועית</p>\n        </div>\n        <div class=\"quote-details\">\n            <div><strong>מספר הצעה:</strong><span>QT-2025-12-15_11-10-19</span></div>\n            <div><strong>תאריך הנפקה:</strong><span>15.12.2025</span></div>\n            <div><strong>תקף עד:</strong><span>19.12.2025</span></div>\n        </div>\n        <div class=\"info-section\">\n            <div class=\"info-box\">\n                <h3>📤 ספק השירות</h3>\n                <p><strong>שם:</strong> מאסטר קוד</p>\n                <p><strong>טלפון:</strong> 052-209-1733</p>\n                <p><strong>אימייל:</strong> przyyryair@gmail.com</p>\n                <p><strong>אתר:</strong> <a href=\"https://yairmaster.info\" target=\"_blank\">https://yairmaster.info</a></p>\n            </div>\n            <div class=\"info-box\">\n                <h3>📥 לקוח</h3>\n                <p><strong>שם:</strong> נתנאל דודמן</p>\n                <p><strong>טלפון:</strong> 0506787252</p>\n                <p><strong>אימייל:</strong> r@gmail.com</p>\n            </div>\n        </div>\n        <div class=\"items-table\">\n            <h2>📋 פירוט השירותים</h2>\n            <table><thead><tr><th>#</th><th>שירות</th><th>כמות</th><th>מחיר ליחידה</th><th>סה\"כ</th></tr></thead><tbody>\n            <tr>\n                <td style=\"padding: 15px; text-align: center; border-bottom: 1px solid #ecf0f1;\">1</td>\n                <td style=\"padding: 15px; border-bottom: 1px solid #ecf0f1;\">\n                    <strong>דף נחיתה פרימיום </strong>\n                    \n                    \n                </td>\n                <td style=\"padding: 15px; text-align: center; border-bottom: 1px solid #ecf0f1;\">1</td>\n                <td style=\"padding: 15px; text-align: center; border-bottom: 1px solid #ecf0f1;\">₪1800.00</td>\n                <td style=\"padding: 15px; text-align: center; border-bottom: 1px solid #ecf0f1; font-weight: bold;\">₪1800.00</td>\n            </tr>\n        </tbody></table>\n            <div class=\"totals\">\n                <div class=\"totals-row subtotal\"><span>סכום ביניים:</span><span>₪1800.00</span></div>\n                \n                <div class=\"totals-row total\"><span>סה\"כ לתשלום:</span><span>₪1800.00</span></div>\n            </div>\n        </div>\n        \n        <div class=\"footer\">\n            <p><strong>מאסטר קוד</strong></p>\n            <p>📞 052-209-1733 | 📧 przyyryair@gmail.com</p>\n            <p>🌐 <a href=\"https://yairmaster.info\">https://yairmaster.info</a></p>\n            <a href=\"https://wa.me/9720522091733?text=היי%20%D7%9E%D7%90%D7%A1%D7%98%D7%A8%20%D7%A7%D7%95%D7%93,%20אני%20מעוניין%20לאשר%20את%20הצעת%20המחיר%20QT-2025-12-15_11-10-19\" class=\"cta-button\" target=\"_blank\">💬 אשר הצעת מחיר בוואטסאפ</a>\n        </div>\n    </div>\n</body>\n</html>"
+    }
+  ],
+  "settings": {
+    "business_name": "מאסטר קוד",
+    "owner": "יאיר",
+    "phone": "052-209-1733",
+    "email": "przyyryair@gmail.com",
+    "website": "https://yairmaster.info"
+  }
+}
